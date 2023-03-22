@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { TextInput, Button, View, StyleSheet, Alert } from 'react-native';
+import { TextInput, View, StyleSheet, Alert } from 'react-native';
 
 import PrimaryButton from '../components/ui/PrimaryButton';
+import Title from '../components/ui/Title';
 import Colors from '../constants/colors';
+import Card  from '../components/ui/Card';
+import QuestionText from '../components/ui/QuestionText';
 
 function StartMenuScreen({onChooseNumber}) {
     const [enteredNumber, setEnteredNumber] = useState('');
@@ -31,47 +34,40 @@ function StartMenuScreen({onChooseNumber}) {
     }
 
     return (
-    <View style={styles.inputContainer}>
-        <TextInput 
-            style={styles.numberInput} 
-            maxLength={2} 
-            keyboardType="number-pad"
-            autoCapitalize="none"
-            autoCorrect={false}
-            onChangeText={numberInputHandler}
-            value={enteredNumber}
-        />
-        <View style={styles.buttonsContainer}>
-            <View style={styles.buttonContainer}>
-                <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
-            </View>    
-            <View style={styles.buttonContainer}>
-                <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
-            </View>    
-        </View>
-    </View>
+     <View style={styles.rootContainer}> 
+        <Title>Guess My Number</Title>  
+        <Card>
+            <QuestionText>Enter a Number</QuestionText>
+            <TextInput 
+                style={styles.numberInput} 
+                maxLength={2} 
+                keyboardType="number-pad"
+                autoCapitalize="none"
+                autoCorrect={false}
+                onChangeText={numberInputHandler}
+                value={enteredNumber}
+            />
+            <View style={styles.buttonsContainer}>
+                <View style={styles.buttonContainer}>
+                    <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+                </View>    
+                <View style={styles.buttonContainer}>
+                    <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
+                </View>    
+            </View>
+        </Card>
+    </View>    
     );
 }
 
 export default StartMenuScreen;
 
 const styles = StyleSheet.create ({
-    inputContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
+    rootContainer: {
+        flex: 1,
         marginTop: 100,
-        marginHorizontal: 24,
-        padding: 16,
-        backgroundColor: Colors.primary800,
-        borderRadius: 8,
-        elevation: 4, //android-only shadow property
-        //iOS shadow property
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 6,
-        shadowOpacity: 0.25,
+        alignItems: 'center'
     },
-
     numberInput: {
         height: 50,
         width: 50,
@@ -82,11 +78,5 @@ const styles = StyleSheet.create ({
         marginVertical: 8,
         fontWeight: 'bold',
         textAlign: 'center',
-    },
-    buttonsContainer: {
-        flexDirection: 'row'
-    },
-    buttonContainer: {
-        flex: 1
     },
 });
