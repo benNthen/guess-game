@@ -35,7 +35,7 @@ function StartMenuScreen({onChooseNumber}) {
 
     return (
      <View style={styles.rootContainer}> 
-        <Title>Guess My Number</Title>  
+        <Title>Guess Your Number</Title>  
         <Card>
             <QuestionText>Enter a Number</QuestionText>
             <TextInput 

@@ -7,7 +7,6 @@ import AppLoading from 'expo-app-loading';
 import StartMenuScreen  from './screens/StartMenuScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
-import Colors from './constants/colors';
 
 export default function App() {
   const[userNumber, setUserNumber] = useState();
@@ -57,11 +56,11 @@ export default function App() {
 
   return (
     <LinearGradient 
-      colors={[Colors.primary700, Colors.accent500]} 
+      colors={['rgb(206,26,15)', 'rgb(255,255,255)', 'rgb(15,17,206)']} 
       style={styles.rootScreen}
      >
       <ImageBackground 
-        source={require('./assets/images/background.png')} 
+        source={require('./assets/images/background.jpg')} 
         resizeMode="cover"
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
