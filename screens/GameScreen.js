@@ -73,9 +73,22 @@ function GameScreen ({ userNumber, onGameOver }) {
 
     let content = (
     <>
+      <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
+        <QuestionText style={styles.instructionText}>
+          Higher or Lower?
+        </QuestionText>
         <View style={styles.buttonsContainer}>
-          
+            <View style={styles.buttonContainer}>
+              <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
+                <Ionicons name="md-remove" size={24} color="white" />
+              </PrimaryButton>
+            </View>
+            <View style={styles.buttonContainer}>
+              <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>
+                <Ionicons name="md-add" size={24} color="white" />
+              </PrimaryButton>
+            </View>
         </View>
       </Card>
       </>
