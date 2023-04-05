@@ -54,9 +54,17 @@ Expo Go will load and open the app on your phone.
 
  Enter any number and press Confirm.
  
+![20230405_003336000_iOS](https://user-images.githubusercontent.com/53241776/229952805-29ccce75-bbe5-479e-9db8-fe72013f35b9.jpg)
+ 
  The Opponent will make a Guess on what number it is. The User's role is to tell the opponent whether the number displayed is either lower or higher by pressing either '-' or '+' buttons. 
  
  The Opponent will continue to make guesses until it matches the number that the user entered, which will eventually the program to a 'Game Over' (Note: if the User lies, the program can pick this up and a message prompt will appear asking the user to state the correct button.)
  
+ ![20230405_003411000_iOS](https://user-images.githubusercontent.com/53241776/229952786-ee6db8a4-fc59-4756-92bf-9460ab5c850d.jpg)
+
+
  On the Game Over screen, the number of rounds along with the number that the user entered will be displayed.
+ 
+ ![20230405_003421000_iOS](https://user-images.githubusercontent.com/53241776/229952656-481870d9-8de8-49c3-bb44-59db4f01eb33.jpg)
+
  
